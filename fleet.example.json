@@ -1,0 +1,57 @@
+{
+  "about": "A made-up fleet for the benchmark, the example and the tests. Sized like the stub fleet the original measurement ran on: three servers with 12, 11 and 8 tools, one of which already prefixes its own tool names. No real server, host or tenant is named here.",
+  "servers": [
+    {
+      "namespace": "inventory",
+      "name": "inventory-mcp",
+      "group": "Inventory-MCP-Users",
+      "tools": {
+        "capabilities": "What this server can answer, in plain words, with an example question for each area. Call it first when unsure. Read-only.",
+        "list_hosts": "Every host in the inventory with its site, role, operating system and last check-in time, newest check-in first. Read-only.",
+        "get_host": "Full record for one host: hardware, installed software, open alerts and the owner on file. Give a hostname or an id. Read-only.",
+        "list_sites": "Every site with its address, host count and the number of hosts that have not checked in for more than a day. Read-only.",
+        "host_uptime": "Uptime and last reboot for one host or a whole site, with a flag on anything up longer than the patch window allows. Read-only.",
+        "list_vms": "Virtual machines on a cluster with power state, assigned memory, disk size and the node each one runs on today. Read-only.",
+        "vm_status": "Live status for one virtual machine: CPU and memory use, disk and network throughput, and any task still running. Read-only.",
+        "storage_usage": "Used and free space per storage pool, with the ten largest consumers and a projected full date at the current rate. Read-only.",
+        "backup_status": "Last backup result per machine over a window, failures first, with the job that ran it and how long it took. Read-only.",
+        "pending_updates": "Updates waiting on each host, split into security and other, with the date each was first seen as pending. Read-only.",
+        "recent_changes": "Configuration changes recorded across the inventory in a date window: who, what, when, and the host it touched. Read-only.",
+        "list_alerts": "Open monitoring alerts by severity, with the host, the check that fired, when it started and whether anyone has it. Read-only."
+      }
+    },
+    {
+      "namespace": "docs",
+      "name": "docs-mcp",
+      "group": "Docs-MCP-Users",
+      "tools": {
+        "docs_capabilities": "What the documentation server holds and how to search it, with example questions. Call it first when unsure. Read-only.",
+        "docs_search": "Search every documentation space for a keyword or phrase and return matching pages with their last-updated date. Read-only.",
+        "docs_get_page": "Read one documentation page in full, with its space, author, last editor and the date it was last changed. Read-only.",
+        "docs_list_spaces": "Every documentation space with its page count, owner and the date of the most recent edit inside it. Read-only.",
+        "docs_recent_changes": "Pages created or edited in a date window, newest first, with the editor and a one-line summary of the change. Read-only.",
+        "docs_find_runbook": "Find the runbook for a named system or symptom and return its steps, its owner and when it was last tested. Read-only.",
+        "docs_list_contacts": "Contacts recorded for a site or a vendor, with role, phone extension and the escalation order on file. Read-only.",
+        "docs_find_config": "Find the documented configuration for a device or service, with the page it lives on and its revision date. Read-only.",
+        "docs_expirations": "Certificates, domains, licenses and warranties expiring in a window, soonest first, with the page that records each. Read-only.",
+        "docs_list_locations": "Every documented location with address, access notes and the rooms or racks recorded against it. Read-only.",
+        "docs_page_history": "Revision history for one page: each edit with its author, date and the size of the change, newest first. Read-only."
+      }
+    },
+    {
+      "namespace": "helpdesk",
+      "name": "helpdesk-mcp",
+      "group": "Helpdesk-MCP-Users",
+      "tools": {
+        "get_summary": "Overview of the ticket queue: open count, created and closed this week, oldest open ticket and the busiest category. Read-only.",
+        "tickets_by_period": "Ticket counts over a date window grouped by day, week or month, excluding automated notices by default. Read-only.",
+        "search_subjects": "Search ticket subjects for a keyword and return matches with status, requester, age and a link into the desk. Read-only.",
+        "agent_workload": "Open and recently closed tickets per agent, with the median age of each agent's open queue. Read-only.",
+        "resolution_stats": "Median and 90th percentile time to first response and to resolution over a window, by category. Read-only.",
+        "ticket_types": "Derived breakdown of tickets by type and subtype over a window, with the share of each and the trend. Read-only.",
+        "data_freshness": "When the cached ticket data was last refreshed and how many tickets changed since the previous refresh. Read-only.",
+        "open_backlog": "Open tickets older than a threshold, oldest first, with category, assignee and the last public reply date. Read-only."
+      }
+    }
+  ]
+}

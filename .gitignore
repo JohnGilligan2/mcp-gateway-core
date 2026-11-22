@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Local configuration and anything credential-shaped stays out of git.
+.env
+.env.*
+!.env.example
+*.secret
+secrets/
+
+# Your real fleet file. fleet.example.json is the made-up one.
+fleet.json
